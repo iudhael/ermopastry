@@ -1,0 +1,10 @@
+
+.height_img_categorie{
+    height:250px;
+}
+
+@media (max-width: 576px) {
+    .height_img_categorie{
+        height:200px;
+    }
+}

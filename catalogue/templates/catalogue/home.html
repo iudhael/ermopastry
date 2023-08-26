@@ -1,0 +1,36 @@
+{%extends 'base.html'%}
+{% block title %}
+    Home
+{% endblock %}
+
+
+{% block content %} 
+    <div class="py-5">
+        <div class="row row-cols-2 row-cols-sm-2 row-cols-md-3 row-cols-lg-3 row-cols-xl-3 g-4 m-2 d-flex justify-content-around">
+            {% for categorie in categorie_objs %}
+                <div class="">
+                    <div class="card h-100 bg-dark">
+                        <a href="{% url 'catalogue:detail_categorie' detail_categorie_id=categorie.id %}#ermopastry" class="text-decoration-none ">
+
+                            <img src="{{ categorie.image_categorie.url }}" class="card-img-top height_img_categorie" alt="{{ categorie.nom_categorie }}">
+                            <div class="card-body text-white">
+                                <h5 class="card-title  text-decoration-underline">{{ categorie.nom_categorie }}</h5>
+                            </div>
+
+                        </a>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+
+    <div class="mt-5 mb-5 text-center">
+        <a href="{% url 'catalogue:home-catalogue' %}#ermopastry">
+            <button class="btn btn-success">
+                View All
+            </button>
+        </a>
+    </div>
+
+
+{% endblock %} 
